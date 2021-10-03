@@ -139,7 +139,7 @@ $vmIds | ForEach-Object {
     $rg = $split[4];
     $name = $split[8];
     Write-Output ("Subscription Id: " + $subscriptionId)
-    $mute = Select-AzureRmSubscription -Subscription $subscriptionId
+    $mute = Select-AzSubscription -Subscription $subscriptionId
 
     $vm = Get-AzVM -ResourceGroupName $rg -Name $name -Status -DefaultProfile $mute 
 
